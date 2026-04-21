@@ -1,0 +1,45 @@
+services:
+  mysqldb:
+    image: mysql:latest
+    container_name: rpg-manager-mysql-db
+    environment:
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - private_network
+  backend:
+    build: ./backend/rpg-manager
+    container_name: rpg-manager-back-end
+    environment:
+      - DB_HOST=mysqldb
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+    ports:
+      - "${SPRING_PORT}:8080"
+    depends_on:
+      - mysqldb
+
+    networks:
+      - public_network
+      - private_network
+  frontend:
+    build: ./frontend/rpg-manager
+    container_name: rpg-manager-front-end
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - public_network
+networks:
+  public_network:
+    driver: bridge
+  private_network:
+    driver: bridge
+volumes:
+  mysql-data:
