@@ -59,6 +59,7 @@ docker-compose up
 
 🔨 **Em construção** — este repositório está nos estágios iniciais. As funcionalidades planejadas incluem:
 
+- [ ] Sistema de Usuarios com Autenticação OAuth e Token JWT
 - [ ] Criação e edição de fichas de personagem
 - [ ] Motor de combate com controle de turnos e ações
 - [ ] Gerenciamento de condições e efeitos
