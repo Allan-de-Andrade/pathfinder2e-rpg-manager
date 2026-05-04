@@ -1,8 +1,8 @@
-package com.allan.rpg_manager.domain;
+package com.allan.rpg_manager.domains.characterDomain;
 
-import com.allan.rpg_manager.domain.services.AttributeRules;
+import com.allan.rpg_manager.domains.characterDomain.services.AttributeRules;
 
-import com.allan.rpg_manager.domain.valueObjects.Ancestry;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Ancestry;
 import lombok.Getter;
 
 @Getter

@@ -7,10 +7,10 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.allan.rpg_manager.domain.Character;
-import com.allan.rpg_manager.domain.valueObjects.Ancestry;
-import com.allan.rpg_manager.domain.valueObjects.Bibliography;
-import com.allan.rpg_manager.domain.valueObjects.CharacterClass;
+import com.allan.rpg_manager.domains.characterDomain.Character;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Ancestry;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Bibliography;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.CharacterClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,8 +18,8 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.allan.rpg_manager.domain.enums.Attribute;
-import com.allan.rpg_manager.domain.services.AttributeRules;
+import com.allan.rpg_manager.domains.characterDomain.enums.Attribute;
+import com.allan.rpg_manager.domains.characterDomain.services.AttributeRules;
 @ExtendWith(MockitoExtension.class)
 public class AttributeRulesTest {
     AttributeRules attributeRules = new AttributeRules();

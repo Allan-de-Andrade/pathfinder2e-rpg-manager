@@ -1,12 +1,12 @@
-package com.allan.rpg_manager.domain.valueObjects;
+package com.allan.rpg_manager.domains.characterDomain.valueObjects;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.allan.rpg_manager.domain.Talent;
-import com.allan.rpg_manager.domain.enums.AncestrySize;
-import com.allan.rpg_manager.domain.enums.Attribute;
-import com.allan.rpg_manager.domain.enums.Language;
+import com.allan.rpg_manager.domains.characterDomain.Talent;
+import com.allan.rpg_manager.domains.characterDomain.enums.AncestrySize;
+import com.allan.rpg_manager.domains.characterDomain.enums.Attribute;
+import com.allan.rpg_manager.domains.characterDomain.enums.Language;
 
 public record Ancestry(
         String name,

@@ -1,8 +1,7 @@
-package com.allan.rpg_manager.domain;
+package com.allan.rpg_manager.domains.characterDomain;
 
-import com.allan.rpg_manager.domain.enums.SkillProficiency;
-import com.allan.rpg_manager.domain.enums.SkillType;
-import com.allan.rpg_manager.domain.services.AttributeRules;
+import com.allan.rpg_manager.domains.characterDomain.enums.SkillProficiency;
+import com.allan.rpg_manager.domains.characterDomain.enums.SkillType;
 
 import lombok.Getter;
 

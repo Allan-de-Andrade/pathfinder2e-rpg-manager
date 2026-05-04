@@ -1,6 +1,6 @@
-package com.allan.rpg_manager.domain.valueObjects;
+package com.allan.rpg_manager.domains.characterDomain.valueObjects;
 
-import com.allan.rpg_manager.domain.Talent;
+import com.allan.rpg_manager.domains.characterDomain.Talent;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

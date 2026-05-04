@@ -1,4 +1,4 @@
-package com.allan.rpg_manager.domain;
+package com.allan.rpg_manager.domains.characterDomain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

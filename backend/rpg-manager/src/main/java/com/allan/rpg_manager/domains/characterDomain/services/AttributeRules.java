@@ -1,13 +1,13 @@
-package com.allan.rpg_manager.domain.services;
+package com.allan.rpg_manager.domains.characterDomain.services;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.allan.rpg_manager.domain.valueObjects.Ancestry;
-import com.allan.rpg_manager.domain.enums.Attribute;
-import com.allan.rpg_manager.domain.Character;
-import com.allan.rpg_manager.domain.valueObjects.CharacterClass;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Ancestry;
+import com.allan.rpg_manager.domains.characterDomain.enums.Attribute;
+import com.allan.rpg_manager.domains.characterDomain.Character;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.CharacterClass;
 
 //Classe responsavel por gerir as regras dos atributos principais e secundarios do personagem
 public class AttributeRules {

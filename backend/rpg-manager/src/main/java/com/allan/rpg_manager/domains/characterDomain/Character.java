@@ -1,16 +1,16 @@
-package com.allan.rpg_manager.domain;
+package com.allan.rpg_manager.domains.characterDomain;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.allan.rpg_manager.domain.enums.Attribute;
+import com.allan.rpg_manager.domains.characterDomain.enums.Attribute;
 
-import com.allan.rpg_manager.domain.enums.SkillProficiency;
-import com.allan.rpg_manager.domain.valueObjects.Ancestry;
-import com.allan.rpg_manager.domain.valueObjects.Bibliography;
-import com.allan.rpg_manager.domain.valueObjects.CharacterClass;
-import com.allan.rpg_manager.domain.valueObjects.Heritage;
+import com.allan.rpg_manager.domains.characterDomain.enums.SkillProficiency;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Ancestry;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Bibliography;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.CharacterClass;
+import com.allan.rpg_manager.domains.characterDomain.valueObjects.Heritage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 @Getter

@@ -1,4 +1,4 @@
-package com.allan.rpg_manager.domain.enums;
+package com.allan.rpg_manager.domains.characterDomain.enums;
 
 public enum Language {
     TADALANO,
