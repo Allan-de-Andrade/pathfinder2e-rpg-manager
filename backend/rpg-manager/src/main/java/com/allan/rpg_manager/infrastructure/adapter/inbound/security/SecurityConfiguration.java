@@ -1,4 +1,4 @@
-package com.allan.rpg_manager.infrastructure.adapter.in;
+package com.allan.rpg_manager.infrastructure.adapter.inbound.security;
 
 import org.springframework.security.config.Customizer;
 import java.security.interfaces.RSAPrivateKey;
@@ -29,7 +29,6 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final SecurityAdapter securityAdapter;
     @Value("${jwt.public.key}")
     private RSAPublicKey publicKey;
     @Value("${jwt.private.key}")
@@ -44,11 +43,11 @@ public class SecurityConfiguration {
                 )
                 .oauth2ResourceServer((oauth2) -> oauth2.jwt(Customizer.withDefaults()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .userDetailsService(securityAdapter)
                 .build();
     }
     @Bean
-    JwtDecoder jwtDecoder() {return NimbusJwtDecoder.withPublicKey(publicKey).build();}
+    JwtDecoder jwtDecoder() 
+    {return NimbusJwtDecoder.withPublicKey(publicKey).build();}
     
     @Bean
     JwtEncoder jwtEncoder(){

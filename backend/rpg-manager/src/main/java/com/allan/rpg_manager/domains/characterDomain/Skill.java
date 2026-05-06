@@ -13,6 +13,7 @@ public class Skill {
     }
     final private SkillType type;
     private SkillProficiency proficiency = SkillProficiency.UNTRAINED;
+   
     private int calculateValue(int attributeValue,int level){
         if(proficiency != SkillProficiency.UNTRAINED)
             return attributeValue + proficiency.getBonus() + level;
