@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3402bcf0-d176-4bf3-8f19-72e664856e40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/enums/WeaponGroups.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/enums/WeaponTraits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/valueObjects/equipments/Armour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/valueObjects/equipments/Equipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/valueObjects/equipments/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/CombatStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/CombatStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Talent.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/Talent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/enums/SkillProficiency.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/enums/Proficiency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/services/AttributeRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/services/AttributeRules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/services/TalentRules.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/valueObjects/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rpg-manager/src/main/java/com/allan/rpg_manager/domain/valueObjects/CharacterClass.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3DDNSCEDq8A21w5NQsKuM4cOcaA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "desenvolvimento",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3402bcf0-d176-4bf3-8f19-72e664856e40" name="Changes" comment="" />
+      <created>1777812684155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777812684155</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

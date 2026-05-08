@@ -20,10 +20,11 @@ public class UserDomain {
     private static final Pattern email_pattern = Pattern.compile
     ("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
     
-    public UserDomain(String username,String email, String password) {
+    public UserDomain(String username,String email, String password, boolean isActive) {
         setUsername(username);
         setEmail(email);
         setPassword(password);
+        setIsActive(isActive);
     }
     
     public void setId(UUID id){
@@ -63,5 +64,12 @@ public class UserDomain {
 
     public boolean isLoginCorrect(String email, String password,PasswordEncoder encoder) {
         return this.email.equals(email) && encoder.matches(password, this.password);
+    }
+    public boolean getIsActive(){
+        return this.isActive;
+    }
+    public boolean setIsActive(boolean isActive){
+        this.isActive = isActive;
+        return this.isActive;
     }
 }

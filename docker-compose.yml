@@ -1,20 +1,22 @@
 services:
-  mysqldb:
+  postgresdb:
     image: mysql:latest
+    restart: always
     container_name: rpg-manager-mysql-db
     environment:
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
-      - MYSQL_DATABASE=${DB_NAME}
+      - POSTGRES_USER: ${DB_USER}
+      - POSTGRES_PASSWORD: ${ROOT_PASSWORD}
+      - POSTGRES_DB: ${DB_NAME}
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
+    shm_size: 128mb
     networks:
       - private_network
   backend:
     build: ./backend/rpg-manager
     container_name: rpg-manager-back-end
     environment:
-      - DB_HOST=mysqldb
+      - DB_HOST=postgresdb
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
@@ -22,7 +24,7 @@ services:
     ports:
       - "${SPRING_PORT}:8080"
     depends_on:
-      - mysqldb
+      - postgresdb
 
     networks:
       - public_network
