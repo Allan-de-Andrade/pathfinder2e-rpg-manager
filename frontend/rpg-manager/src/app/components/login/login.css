@@ -1,0 +1,42 @@
+div{
+    display: flex;
+    height:100vh;
+}
+
+img{
+    display:block;
+    width:50vh;
+    height:50vh;
+    margin-left:auto;
+    margin-right:auto;
+    padding:25vh;
+}
+main{
+    flex-grow:1;
+    width:75vh;
+    background-color:rgb(248, 242, 242);
+    margin-left:auto;
+    margin-right:0px;
+    padding:20px;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    margin-top:5vh;
+    gap:20px;
+}
+mat-form-field{
+    margin-bottom: 0px;
+}
+input{
+    margin:0px;
+}
+p{
+    margin:0px;
+    padding:0px;
+    color:orangered;
+    font-weight: bolder;
+}
+button{
+    width:100%;
+}

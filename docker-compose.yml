@@ -1,8 +1,8 @@
 services:
   postgresdb:
-    image: mysql:latest
+    image: postgres:latest
     restart: always
-    container_name: rpg-manager-mysql-db
+    container_name: rpg-manager-postgres-db
     environment:
       - POSTGRES_USER: ${DB_USER}
       - POSTGRES_PASSWORD: ${ROOT_PASSWORD}
@@ -44,4 +44,4 @@ networks:
   private_network:
     driver: bridge
 volumes:
-  mysql-data:
+  postgres_data:

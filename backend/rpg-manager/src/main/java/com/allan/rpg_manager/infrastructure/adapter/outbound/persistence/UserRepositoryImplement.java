@@ -8,6 +8,7 @@ import com.allan.rpg_manager.infrastructure.adapter.outbound.persistence.mapper.
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -24,25 +25,24 @@ public class UserRepositoryImplement implements UserRepository {
 
     @Override
     public UserDomain save(UserDomain userDomain) {
-        UserEntity savedEntity = jpaUserRepository.save(userEntityMapper.toEntity(userDomain));
-        userDomain.setId(savedEntity.getId());
-        return userDomain;
+        UserEntity savedEntity = jpaUserRepository.saveAndFlush(userEntityMapper.toEntity(userDomain));
+        return userEntityMapper.toDomain(savedEntity);
     }
 
     @Override
-    public UserDomain findByEmail(String email) {
-        UserEntity userEntity = jpaUserRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
-        return userEntityMapper.toDomain(userEntity);
+    public Optional<UserDomain> findByEmail(String email) {
+        return jpaUserRepository.findByEmail(email).map(userEntityMapper::toDomain);
     }
 
     @Override
-    public UserDomain findById(UUID id) {
-        UserEntity userEntity = jpaUserRepository.findById(id)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with id: " + id));
-        return userEntityMapper.toDomain(userEntity);
+    public Optional<UserDomain> findById(UUID id) {
+        return jpaUserRepository.findById(id).map(userEntityMapper::toDomain);
     }
 
+    public Optional<UserDomain> findByProviderSubject(String providerSubject) {
+        return jpaUserRepository.findByProviderSubject(providerSubject).map(userEntityMapper::toDomain);
+    }
+    
     @Override
     public UserDomain updateUser(UserDomain userDomain) {
         UserEntity userEntity = jpaUserRepository.findById(userDomain.getId())

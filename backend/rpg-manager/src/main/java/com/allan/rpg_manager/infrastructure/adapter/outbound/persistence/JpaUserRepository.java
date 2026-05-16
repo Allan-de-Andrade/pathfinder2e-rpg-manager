@@ -9,5 +9,6 @@ import java.util.UUID;
 
 public interface JpaUserRepository extends JpaRepository<UserEntity, UUID> {
     public Optional<UserEntity> findByEmail(String email);
+    public Optional<UserEntity> findByProviderSubject(String providerSubject);
     public void deleteById(UUID id);
 }

@@ -29,9 +29,13 @@ public class UserEntity {
     @Column(nullable = false,unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable =true)
     private String password;
 
+    @Column(nullable = true)
+    private String providerSubject;
+    @Column(nullable = true)
+    private String provider;
     @Column(nullable = false)
     private Boolean isActive = true;
    
@@ -39,6 +43,10 @@ public class UserEntity {
         this.username = userDomain.getUsername();
         this.email = userDomain.getEmail();
         this.password = userDomain.getPassword();
+        this.providerSubject = userDomain.getProviderSubject();
+        if (userDomain.getProviders() != null && !userDomain.getProviders().isEmpty()) {
+            this.provider = userDomain.getProviders().iterator().next().name();
+        }
         this.isActive = userDomain.getIsActive();
     }
 }

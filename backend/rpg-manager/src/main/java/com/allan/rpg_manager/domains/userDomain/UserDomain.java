@@ -3,10 +3,10 @@ package com.allan.rpg_manager.domains.userDomain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Getter
 @NoArgsConstructor
@@ -15,18 +15,29 @@ public class UserDomain {
     private String username;
     private String email;
     private String password;
-    private boolean isActive = true;
+    private String providerSubject;
+    private Set<AuthProviders> providers;
+    private boolean isActive;
     
     private static final Pattern email_pattern = Pattern.compile
     ("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$");
     
-    public UserDomain(String username,String email, String password, boolean isActive) {
+    public UserDomain(String username,String email, String password) {
         setUsername(username);
         setEmail(email);
         setPassword(password);
-        setIsActive(isActive);
+        setIsActive(true);
     }
-    
+
+    public static UserDomain googleUser(String username,String email, String providerSubject){
+        UserDomain user = new UserDomain();
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setProvider(providerSubject, AuthProviders.Google);
+        user.setIsActive(true);
+        return user;
+    }
+
     public void setId(UUID id){
         this.id = id;
     }
@@ -61,13 +72,19 @@ public class UserDomain {
 
         this.password = password;
     }
-
-    public boolean isLoginCorrect(String email, String password,PasswordEncoder encoder) {
-        return this.email.equals(email) && encoder.matches(password, this.password);
+    
+    public void setProvider(String providerSubject, AuthProviders provider){
+        if (provider == null) {
+            throw new IllegalArgumentException("Provider cannot be null");
+        }
+        this.providerSubject = providerSubject;
+        this.providers = Set.of(provider);
     }
+
     public boolean getIsActive(){
         return this.isActive;
     }
+
     public boolean setIsActive(boolean isActive){
         this.isActive = isActive;
         return this.isActive;

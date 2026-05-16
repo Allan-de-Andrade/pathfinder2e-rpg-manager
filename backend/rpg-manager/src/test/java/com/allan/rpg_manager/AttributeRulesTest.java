@@ -1,9 +1,9 @@
 package com.allan.rpg_manager;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -66,7 +66,7 @@ public class AttributeRulesTest {
         Attribute bibliographyAttributeFreedom = Attribute.STRENGTH;
 
         when(ancestry.attributesBonus()).thenReturn(ancestryAttributes);
-        when(ancestry.attributesBonus()).thenReturn(Collections.singletonList(Attribute.CHARISMA));
+        when(ancestry.attributeDebuffer()).thenReturn(Optional.of(Attribute.CHARISMA));
         when(characterClass.primaryAttribute()).thenReturn(Attribute.INTELLIGENCE);
         when(bibliography.attributeFreeBuffer()).thenReturn(bibliographyAttributeFreedom);
         when(bibliography.attributesFixedBuffer()).thenReturn(bibliographyAttributes);

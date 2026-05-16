@@ -21,13 +21,23 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
-
+    @ExceptionHandler(UserAlreadyRegistered.class)
+    public ResponseEntity<Void> handleUserAlreadyRegistered(UserAlreadyRegistered e) {
+        e.printStackTrace();
+        return ResponseEntity.status(HttpStatus.CONFLICT).build();
+    }
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<Void> handleAccessDenied(AccessDeniedException e) {
         e.printStackTrace();
         return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
     }
 
+    @ExceptionHandler(UnsupportedOperationException.class)
+    public ResponseEntity<Void> handleUnsupportedOperation(UnsupportedOperationException e) {
+        e.printStackTrace();
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
+    }
+    
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Void> handleRuntime(RuntimeException e) {
         e.printStackTrace();

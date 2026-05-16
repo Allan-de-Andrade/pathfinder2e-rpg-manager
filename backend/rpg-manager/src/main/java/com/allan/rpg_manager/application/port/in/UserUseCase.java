@@ -10,7 +10,8 @@ import com.allan.rpg_manager.domains.userDomain.UserDomain;
 
 public interface UserUseCase {
     public UserDomain register(UserRequest userRequest);
-    public LoginResponse login(LoginRequest loginRequest);
+    public LoginResponse loginWithCredentials(LoginRequest loginRequest);
+    public LoginResponse loginWithGoogle(String token);
     public UserDomain updateUser(UserRequest userRequest,UUID userId,UUID authenticatedUserId);
     public void deleteUser(UUID userId,UUID authenticatedUserId) throws AccessDeniedException;
 }
