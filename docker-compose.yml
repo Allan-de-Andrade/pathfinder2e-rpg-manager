@@ -1,4 +1,5 @@
 services:
+<<<<<<< HEAD
   mysqldb:
     image: mysql:latest
     container_name: rpg-manager-mysql-db
@@ -8,21 +9,49 @@ services:
       - MYSQL_DATABASE=${DB_NAME}
     volumes:
       - mysql-data:/var/lib/mysql
+=======
+  postgresdb:
+    image: postgres:latest
+    restart: always
+    container_name: rpg-manager-postgres-db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    shm_size: 128mb
+>>>>>>> desenvolvimento
     networks:
       - private_network
   backend:
     build: ./backend/rpg-manager
     container_name: rpg-manager-back-end
+<<<<<<< HEAD
     environment:
       - DB_HOST=mysqldb
+=======
+    env_file:
+      - ./backend/rpg-manager/.env
+    environment:
+      - DB_HOST=postgresdb
+>>>>>>> desenvolvimento
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
       - DB_PORT=${DB_PORT}
     ports:
+<<<<<<< HEAD
       - "${SPRING_PORT}:8080"
     depends_on:
       - mysqldb
+=======
+      - "${SPRING_PORT:-8080}:8080"
+    depends_on:
+      - postgresdb
+>>>>>>> desenvolvimento
 
     networks:
       - public_network
@@ -42,4 +71,8 @@ networks:
   private_network:
     driver: bridge
 volumes:
+<<<<<<< HEAD
   mysql-data:
+=======
+  postgres_data:
+>>>>>>> desenvolvimento

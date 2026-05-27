@@ -1,0 +1,50 @@
+<main>
+
+    <form [formGroup]="registerForm">
+        <h1>Cadastre-se aqui:</h1>
+        <mat-form-field>
+            <mat-label>Username </mat-label>
+            <input matInput name="username" formControlName="username" required>
+        </mat-form-field>
+
+        @if(submited && registerForm.get('username')?.hasError('required')){
+        <p>Username requerido</p>
+        }
+
+        @else if(submited && registerForm.get('username')?.hasError('minlength'))
+        {
+        <p>Username precisa ser maior que 4 caracteres</p>
+        }
+
+        <mat-form-field>
+            <mat-label>Email </mat-label>
+            <input matInput type="email" name="email" formControlName="email" required>
+
+        </mat-form-field>
+        @if(submited && registerForm.get('email')?.hasError('required')){
+        <p>Email requerido</p>
+        }
+        @else if(submited && registerForm.get('email')?.hasError('email'))
+        {
+        <p>Email invalido</p>
+        }
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" formControlName="password" required>
+        </mat-form-field>
+
+        @if(submited && registerForm.get('password')?.hasError('required')){
+        <p>Senha requerida</p>
+        }
+
+        @else if(submited && registerForm.get('password')?.hasError('minlength'))
+        {
+        <p>Senha precisa ser maior que 8 caracteres</p>
+        }
+
+        <button matButton="filled" type="submit" (click)="submit()">Cadastrar</button>
+        <h3>Ou registre com:</h3>
+        <button matButton="outlined" class="" (click)="auth.loginGoogle()">Google</button>
+    </form>
+    
+</main>

@@ -1,0 +1,38 @@
+<div id="login-container">
+    <img src="dice.jpg" alt="Dice">
+    <main>
+        <h1>Venha conhecer o PathManager!</h1>
+        <form [formGroup]="loginForm">
+            <mat-form-field>
+                <mat-label>Email </mat-label>
+                <input matInput type="email" name="email" formControlName="email" required>
+               
+            </mat-form-field>
+            @if(submited && loginForm.get('email')?.hasError('required')){
+                <p>Email requerido</p>
+            }
+            @else if(submited &&  loginForm.get('email')?.hasError('email'))
+            {
+                <p>Email invalido</p>
+            }
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" formControlName="password" required>
+            </mat-form-field>
+            
+            @if(submited && loginForm.get('password')?.hasError('required')){
+                <p>Senha requerida</p>
+            }
+
+            @else if(submited && loginForm.get('password')?.hasError('minlength'))
+            {
+                <p>Senha precisa ser maior que 8 caracteres</p>
+            }
+
+            <button matButton="filled" type="submit" (click)="submit()">Login</button>
+        </form>
+        <h3>Ou continue com:</h3>
+        <button matButton="outlined" class=""(click)="auth.loginGoogle()">Google</button>
+        <h3>Não tem uma conta? <a href="/register">Cadastre-se aqui!</a></h3>
+    </main>
+</div>

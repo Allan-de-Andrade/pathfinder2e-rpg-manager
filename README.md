@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎲 Pathfinder 2e RPG Manager
 
 > ⚠️ **Projeto em desenvolvimento** — funcionalidades ainda sendo construídas. Contribuições e sugestões são bem-vindas!
@@ -71,3 +72,6 @@ docker-compose up
 
 Feito por [Allan Victor](https://github.com/Allan-de-Andrade)  
 📧 allanvictorsilvaandrade@gmail.com
+=======
+# pathfinder2e-rpg-manager
+>>>>>>> desenvolvimento

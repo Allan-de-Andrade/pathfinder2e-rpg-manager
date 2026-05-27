@@ -32,4 +32,10 @@ build/
 ### VS Code ###
 .vscode/
 
+<<<<<<< HEAD
 .env
+=======
+.env
+app.key
+app.pub
+>>>>>>> desenvolvimento
