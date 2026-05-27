@@ -3,7 +3,7 @@ package com.allan.rpg_manager.application.port.out;
 import java.util.Optional;
 import java.util.UUID;
 
-import com.allan.rpg_manager.domains.userDomain.UserDomain;
+import com.allan.rpg_manager.domains.securityDomain.UserDomain;
 
 public interface UserRepository{
     public UserDomain save(UserDomain userDomain);

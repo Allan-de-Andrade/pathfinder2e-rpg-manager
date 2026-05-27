@@ -1,11 +1,15 @@
 import { inject, Injectable } from '@angular/core';
 import {LocalStorageToken} from './localStorageToken'
+import { Observable } from 'rxjs/internal/Observable';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
 export class TokenService {
   private readonly key = "auth-token"
   localStorage = inject(LocalStorageToken)
+  http = inject(HttpClient);
+  auth_url: string = "http://localhost:8080/api/auth";
   
   set(token:string): void{
     localStorage.setItem(this.key, token)
@@ -37,6 +41,11 @@ export class TokenService {
     } catch (e) {
       return true; // se não conseguir decodificar, considera expirado
     }
+  }
+
+  public refreshToken(): Observable<any> {
+    return this.http.post(this.auth_url + "/refresh-token", {}, { withCredentials: true });
+
   }
 }
 

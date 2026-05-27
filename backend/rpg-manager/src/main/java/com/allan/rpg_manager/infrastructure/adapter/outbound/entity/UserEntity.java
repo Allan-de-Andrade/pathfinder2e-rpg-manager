@@ -12,7 +12,7 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-import com.allan.rpg_manager.domains.userDomain.UserDomain;
+import com.allan.rpg_manager.domains.securityDomain.UserDomain;
 @Getter
 @Setter
 @NoArgsConstructor

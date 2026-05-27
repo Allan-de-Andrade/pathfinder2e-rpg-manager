@@ -49,7 +49,7 @@ export class Login {
       subscribe({
         
         next: (data) => {
-          this.tokenService.set(data.token)
+          this.tokenService.set(data.access_token)
           this.router.navigate(['/'])
         },
 

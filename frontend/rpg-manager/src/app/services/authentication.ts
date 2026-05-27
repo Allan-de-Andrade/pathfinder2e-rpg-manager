@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { OAuthEvent, OAuthService } from 'angular-oauth2-oidc';
 import { filter, Observable } from 'rxjs';
 import { TokenService } from './token/token-service';
+import { User } from '../components/login/User';
 
 const oAuthConfiguration = {
   issuer: "https://accounts.google.com",
@@ -18,7 +19,10 @@ const oAuthConfiguration = {
 export class Authentication {
   private readonly googleLoginPendingKey = 'google-login-pending';
   private googleLoginInProgress = false;
-  back_end_url = "http://localhost:8080/api/user"
+  
+  user_url = "http://localhost:8080/api/user"
+  auth_url='http://localhost:8080/api/auth'
+
   router = inject(Router)
   http = inject(HttpClient)
   tokenService = inject(TokenService)
@@ -40,13 +44,13 @@ export class Authentication {
             this.sendGoogleToken();
           }
         });
-
   }
+  
   register(user: User) {
-    return this.http.post(this.back_end_url + "/register", user);
+    return this.http.post(this.user_url + "/register", user);
   }
-  loginBasic(user: User): Observable<any> {
-    return this.http.post(this.back_end_url + "/login", user, { withCredentials: true });
+  loginBasic(user: User): Observable<{ access_token: string }> {
+    return this.http.post<{ access_token: string }>(this.auth_url + "/login", user, { withCredentials: true });
   }
   loginGoogle() {
     sessionStorage.setItem(this.googleLoginPendingKey, 'true');
@@ -69,17 +73,19 @@ export class Authentication {
 
     this.googleLoginInProgress = true;
     this.http
-      .post<{ token: string; expirationTime: number }>(
-        `${this.back_end_url}/google-login`,
-        { idToken }
+      .post<{ access_token: string;}>(
+        `${this.auth_url}/google-login`,
+        { idToken },
+        {withCredentials:true}
       )
       .subscribe({
         next: (response) => {
-          this.tokenService.set(response.token);
+          this.tokenService.set(response.access_token);
           this.clearPendingGoogleLogin();
           this.oauthService.logOut(true);
           this.router.navigate(['/']);
         },
+
         error: (error) => {
           this.clearPendingGoogleLogin();
           console.error('Google login failed', error);
@@ -87,6 +93,7 @@ export class Authentication {
         },
       });
   }
+  
   get isLoggedIn(): boolean {
     return this.tokenService.get() !== null;
   }

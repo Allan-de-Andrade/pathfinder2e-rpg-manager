@@ -1,7 +1,7 @@
 package com.allan.rpg_manager.infrastructure.adapter.outbound.persistence;
 
 import com.allan.rpg_manager.application.port.out.UserRepository;
-import com.allan.rpg_manager.domains.userDomain.UserDomain;
+import com.allan.rpg_manager.domains.securityDomain.UserDomain;
 import com.allan.rpg_manager.infrastructure.adapter.outbound.entity.UserEntity;
 import com.allan.rpg_manager.infrastructure.adapter.outbound.persistence.mapper.UserEntityMapper;
 

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/characters")
 public class CharacterController{
-    @GetMapping("/")
-    public void findAll(){
-        
+    @GetMapping
+    public String findAll(){
+        return "Characters";
     }
 }

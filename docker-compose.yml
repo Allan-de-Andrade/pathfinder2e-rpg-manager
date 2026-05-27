@@ -4,9 +4,11 @@ services:
     restart: always
     container_name: rpg-manager-postgres-db
     environment:
-      - POSTGRES_USER: ${DB_USER}
-      - POSTGRES_PASSWORD: ${ROOT_PASSWORD}
-      - POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "${DB_PORT}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     shm_size: 128mb
@@ -15,6 +17,8 @@ services:
   backend:
     build: ./backend/rpg-manager
     container_name: rpg-manager-back-end
+    env_file:
+      - ./backend/rpg-manager/.env
     environment:
       - DB_HOST=postgresdb
       - DB_USER=${DB_USER}
@@ -22,7 +26,7 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_PORT=${DB_PORT}
     ports:
-      - "${SPRING_PORT}:8080"
+      - "${SPRING_PORT:-8080}:8080"
     depends_on:
       - postgresdb
 

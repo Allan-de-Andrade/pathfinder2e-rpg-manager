@@ -1,4 +1,4 @@
-package com.allan.rpg_manager.domains.userDomain;
+package com.allan.rpg_manager.domains.securityDomain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

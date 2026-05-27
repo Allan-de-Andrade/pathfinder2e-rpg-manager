@@ -1,7 +1,7 @@
 package com.allan.rpg_manager.infrastructure.adapter.outbound.persistence.mapper;
 
-import com.allan.rpg_manager.domains.userDomain.UserDomain;
-import com.allan.rpg_manager.domains.userDomain.AuthProviders;
+import com.allan.rpg_manager.domains.securityDomain.AuthProviders;
+import com.allan.rpg_manager.domains.securityDomain.UserDomain;
 import com.allan.rpg_manager.infrastructure.adapter.outbound.entity.UserEntity;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,5 @@
 package com.allan.rpg_manager.infrastructure.adapter.inbound.web;
 
-import com.allan.rpg_manager.application.dtos.LoginRequest;
-import com.allan.rpg_manager.application.dtos.LoginResponse;
-import com.allan.rpg_manager.application.dtos.GoogleLoginRequest;
 import com.allan.rpg_manager.application.dtos.UserRequest;
 import com.allan.rpg_manager.application.dtos.UserResponse;
 import com.allan.rpg_manager.application.port.in.AuthenticatedUserPort;
@@ -36,16 +33,6 @@ public class UserController {
     public ResponseEntity<UserResponse> register(@RequestBody UserRequest userRequest) {
         UserResponse response = userMapper.toResponse(userUseCase.register(userRequest));
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
-        return ResponseEntity.ok(userUseCase.loginWithCredentials(loginRequest));
-    }
-
-    @PostMapping("/google-login")
-    public ResponseEntity<LoginResponse> googleLogin(@RequestBody GoogleLoginRequest request) {
-        return ResponseEntity.ok(userUseCase.loginWithGoogle(request.idToken()));
     }
 
     @PutMapping("/update/{id}")
