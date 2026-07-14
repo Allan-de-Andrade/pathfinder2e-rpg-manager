@@ -8,7 +8,9 @@ import com.allan.rpg_manager.domains.characterDomain.valueObjects.Ancestry;
 import com.allan.rpg_manager.domains.characterDomain.enums.Attribute;
 import com.allan.rpg_manager.domains.characterDomain.Character;
 import com.allan.rpg_manager.domains.characterDomain.valueObjects.CharacterClass;
+import org.springframework.stereotype.Service;
 
+@Service
 //Classe responsavel por gerir as regras dos atributos principais e secundarios do personagem
 public class AttributeRules {
     //Calcula os modificadores de atributos, ex:8 = -1, 10 = +0, 12 = +1 ...

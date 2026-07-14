@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Component;
 
-import com.allan.rpg_manager.application.dtos.GoogleUserInfo;
+import com.allan.rpg_manager.application.dtos.security.GoogleUserInfo;
 import com.allan.rpg_manager.application.port.out.GoogleAuthPort;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;

@@ -38,14 +38,14 @@ export class TokenService {
       const payload = JSON.parse(atob(token.split('.')[1]));
       const expiry = payload.exp * 1000; // converte para ms
       return Date.now() > expiry;
-    } catch (e) {
+    } 
+    catch (e) {
       return true; // se não conseguir decodificar, considera expirado
     }
   }
 
   public refreshToken(): Observable<any> {
     return this.http.post(this.auth_url + "/refresh-token", {}, { withCredentials: true });
-
   }
 }
 

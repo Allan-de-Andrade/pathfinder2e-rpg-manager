@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Authentication } from './services/authentication';
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet,
   ],

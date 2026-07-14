@@ -1,7 +1,7 @@
 package com.allan.rpg_manager.application.services;
 
-import com.allan.rpg_manager.application.dtos.LoginResponse;
-import com.allan.rpg_manager.application.port.in.TokenUseCase;
+import com.allan.rpg_manager.application.dtos.security.LoginResponse;
+import com.allan.rpg_manager.application.port.in.security.TokenUseCase;
 import com.allan.rpg_manager.application.port.out.RefreshTokenRepository;
 import com.allan.rpg_manager.domains.securityDomain.RefreshTokenDomain;
 

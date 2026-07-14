@@ -3,7 +3,43 @@
 </header>
 
 <main>
-    <h1>Personagens</h1>
-    <button (click)="listCharacter()">Listar Personagens</button>
+    <section>
+        <header id="header-characters">
+            <h1>Personagens: </h1>
+            <button matButton="filled" (click)="createCharacter()">Criar novo personagem</button>
+        </header>
+        @if (characters.length === 0) {
+            <div id="loading">
+                <mat-spinner mode="indeterminate"></mat-spinner>
+                <h1>Carregando Personagens...</h1>
+            </div>
+           
+        }
+        <div id="characters">
+            @for (character of characters; track $index) {
+            <mat-card class="character-card" appereance="outlined">
+                <mat-card-header>
+                    <img mat-card-sm-image src="file.png">
+                    <mat-card-title>{{character.name}}</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <h3>Level: {{ character.level }}</h3>
+                    <h3>Classe:{{ character.className}} </h3>
+                    <h3>Raça: {{character.ancestryName}}</h3>
+                    <h3>HP: {{ character.currentHealth }} / {{ character.maxHealth }}</h3>
+                    <h3>Origem: {{ character.bibliographyName }} </h3>
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <button matButton="filled" (click)="getFullCharacter(character.id)">Ver ficha</button>
+                </mat-card-actions>
+            </mat-card>
+            }
+        </div>
+    </section>
 </main>
-<footer><p>este site não é distribuido pela produtora de Pathfinder 2e, foi feito por usuarios entusiastas do RPG</p></footer>
+
+<footer>
+    <p>este site não é distribuido pela produtora de Pathfinder 2e, foi feito por um usuario entusiasta de RPG</p>
+</footer>

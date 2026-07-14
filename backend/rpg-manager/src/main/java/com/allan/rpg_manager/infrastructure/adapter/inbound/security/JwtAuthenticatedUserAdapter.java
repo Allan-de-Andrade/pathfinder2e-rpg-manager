@@ -6,7 +6,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 
-import com.allan.rpg_manager.application.port.in.AuthenticatedUserPort;
+import com.allan.rpg_manager.application.port.in.security.AuthenticatedUserPort;
 
 @Component
 public class JwtAuthenticatedUserAdapter implements AuthenticatedUserPort {

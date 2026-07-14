@@ -10,4 +10,5 @@ public class Heritage {
     private String name;
     private String description;
     private Talent talent;
+    private Ancestry ancestryRequired;
 }

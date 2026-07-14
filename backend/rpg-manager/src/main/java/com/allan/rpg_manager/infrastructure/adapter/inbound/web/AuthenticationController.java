@@ -8,11 +8,11 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.allan.rpg_manager.application.dtos.GoogleLoginRequest;
-import com.allan.rpg_manager.application.dtos.LoginRequest;
-import com.allan.rpg_manager.application.dtos.LoginResponse;
-import com.allan.rpg_manager.application.port.in.AuthenticationUseCase;
-import com.allan.rpg_manager.application.port.in.TokenUseCase;
+import com.allan.rpg_manager.application.dtos.security.GoogleLoginRequest;
+import com.allan.rpg_manager.application.dtos.security.LoginRequest;
+import com.allan.rpg_manager.application.dtos.security.LoginResponse;
+import com.allan.rpg_manager.application.port.in.security.AuthenticationUseCase;
+import com.allan.rpg_manager.application.port.in.security.TokenUseCase;
 
 @RestController
 @RequestMapping("/api/auth")

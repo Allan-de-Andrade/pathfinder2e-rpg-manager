@@ -1,10 +1,10 @@
 package com.allan.rpg_manager.infrastructure.adapter.inbound.web;
 
-import com.allan.rpg_manager.application.dtos.UserRequest;
-import com.allan.rpg_manager.application.dtos.UserResponse;
-import com.allan.rpg_manager.application.port.in.AuthenticatedUserPort;
-import com.allan.rpg_manager.application.port.in.UserUseCase;
-import com.allan.rpg_manager.infrastructure.adapter.inbound.web.mapper.UserMapper;
+import com.allan.rpg_manager.application.dtos.security.UserRequest;
+import com.allan.rpg_manager.application.dtos.security.UserResponse;
+import com.allan.rpg_manager.application.port.in.security.AuthenticatedUserPort;
+import com.allan.rpg_manager.application.port.in.security.UserUseCase;
+import com.allan.rpg_manager.infrastructure.adapter.outbound.persistence.mapper.UserMapper;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

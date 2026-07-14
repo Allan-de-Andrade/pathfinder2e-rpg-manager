@@ -6,10 +6,10 @@ import java.util.UUID;
 import com.allan.rpg_manager.domains.securityDomain.UserDomain;
 
 public interface UserRepository{
-    public UserDomain save(UserDomain userDomain);
-    public Optional<UserDomain> findByEmail(String email);
-    public Optional<UserDomain> findByProviderSubject(String providerSubject);
-    public UserDomain updateUser(UserDomain userDomain);
-    public Optional<UserDomain> findById(UUID id);
-    public void deleteById(UUID id);
+    UserDomain save(UserDomain userDomain);
+    Optional<UserDomain> findByEmail(String email);
+    Optional<UserDomain> findByProviderSubject(String providerSubject);
+    UserDomain updateUser(UserDomain userDomain);
+    Optional<UserDomain> findById(UUID id);
+    void deleteById(UUID id);
 }

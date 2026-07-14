@@ -1,7 +1,7 @@
 package com.allan.rpg_manager.application.services;
 
-import com.allan.rpg_manager.application.dtos.UserRequest;
-import com.allan.rpg_manager.application.port.in.UserUseCase;
+import com.allan.rpg_manager.application.dtos.security.UserRequest;
+import com.allan.rpg_manager.application.port.in.security.UserUseCase;
 import com.allan.rpg_manager.application.port.out.GoogleAuthPort;
 import com.allan.rpg_manager.application.port.out.UserRepository;
 import com.allan.rpg_manager.domains.securityDomain.UserDomain;

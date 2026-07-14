@@ -58,7 +58,7 @@ export class Login {
             alert("Credenciais inválidas")
           }
           else{
-            alert("Erro ao fazer login: " + err.status)
+            alert("Erro ao fazer login, tente novamente mais tarde ")
           }
         }
       })

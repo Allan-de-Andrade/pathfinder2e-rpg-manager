@@ -1,0 +1,133 @@
+<h1>Criação do Personagem</h1>
+<section>
+  <mat-stepper #stepper linear>
+
+    <!--Informações basicas-->
+
+    <mat-step [stepControl]="basicInfoForm">
+      <ng-template matStepLabel>Passo 1: Informações Básicas</ng-template>
+
+      <form [formGroup]="basicInfoForm">
+        <mat-form-field>
+          <mat-label>Nome do Personagem</mat-label>
+          <input matInput placeholder="Digite o nome do personagem" formControlName="name" required>
+        </mat-form-field>
+        <textarea matInput placeholder="Digite a historia do personagem" formControlName="backstory" ></textarea>
+        
+        <mat-form-field>
+          <mat-label>Level</mat-label>
+          <input matInput type="number" placeholder="Digite o level do personagem"  formControlName="level" required>
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperNext>Proximo</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--Atributos-->
+
+    <mat-step [stepControl]="attributesForm">
+      <ng-template matStepLabel>Passo 2: Atributos</ng-template>
+
+      <form [formGroup]="attributesForm">
+        <h3>Para escolher os valores dos seus atributos use a seguinte escala:8,10,12,14,16,18</h3>
+        <mat-form-field>
+          <mat-label>Strength</mat-label>
+          <input matInput type="number" placeholder="Digite o valor da força" formControlName="strength" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Dexterity</mat-label>
+          <input matInput type="number" placeholder="Digite o valor da destreza" formControlName="dexterity" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Intelligence</mat-label>
+          <input matInput type="number" placeholder="Digite o valor da inteligência"  formControlName="intelligence" required>
+        </mat-form-field>
+          <mat-form-field>
+          <mat-label>Constitution</mat-label>
+          <input matInput type="number" placeholder="Digite o valor da constituição"  formControlName="constitution"required>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Carisma</mat-label>
+          <input matInput type="number" placeholder="Digite o valor do carisma"  formControlName="charisma" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Sabedoria</mat-label>
+          <input matInput type="number" placeholder="Digite o valor da sabedoria"  formControlName="wisdom" required>
+        </mat-form-field>
+        
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Proximo</button>
+        </div>
+      </form>
+    </mat-step>
+    <!--Classes, Raças e Bibliografias-->
+    <mat-step [stepControl]="choicesForm">
+      <ng-template matStepLabel>Passo 3: Classes, Raças e Bibliografias</ng-template>
+
+      <form [formGroup]="choicesForm">
+        <mat-form-field>
+          <mat-label>Classe</mat-label>
+          <mat-select required formControlName="classId">
+            @for (class of classes; track $index) { 
+              <mat-option [value]="class.id">
+                {{ class.name }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Raça</mat-label>
+          <mat-select required formControlName="ancestryId">
+            @for (ancestry of races; track $index) { 
+              <mat-option [value]="ancestry.id">
+                {{ ancestry.name }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Bibliografia</mat-label>
+          <mat-select required formControlName="bibliographyId">
+            @for (bibliography of bibliographies; track $index) { 
+              <mat-option [value]="bibliography.id">
+                {{ bibliography.name }}
+              </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Proximo</button>
+        </div>
+
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="skillsForm">
+      <ng-template matStepLabel>Passo 4: Pericias Extras</ng-template>
+
+      <form [formGroup]="skillsForm">
+        <h3>Escolha as pericias extras que deseja ter</h3>
+        <mat-chip-listbox aria-label="select your skills" formControlName="skill" multiple>
+          @for(skill of skillsAvailable; track $index) {
+            <mat-chip-option [value]="skill">
+              {{ skill }}
+            </mat-chip-option>
+          }
+        </mat-chip-listbox>
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button (click)="submitCharacter()">Concluir</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper>
+</section>

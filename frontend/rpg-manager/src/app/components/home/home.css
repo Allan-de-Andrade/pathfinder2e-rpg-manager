@@ -1,0 +1,39 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+mat-card{
+    width: 50vh;
+}
+mat-card-header{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    display: flex;
+    margin:15px;
+}
+img{
+    border-radius: 100%;
+}
+#header-characters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#characters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap:30px;
+}

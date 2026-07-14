@@ -1,0 +1,40 @@
+@if (characterData) {
+    <section>
+        <header>
+            <h1>{{ characterData.name }}</h1>
+            <img src="file.png" alt="Imagem do personagem" width="200">
+        </header>
+        <form>
+            <h2>Informações</h2>
+            <h3>Level: {{ characterData.level }}</h3>
+            <h3>Classe: {{ characterData.className }}</h3>
+            <h3>Raça: {{ characterData.ancestryName }}</h3>
+            <h3>Origem: {{ characterData.bibliographyName }}</h3>
+            <h3>HP: {{ characterData.currentHealth }} / {{ characterData.maxHealth }}</h3>
+            <div>
+                <h2>Atributos</h2>
+                @for (attribute of attributesName; track $index) {
+                    <h3>{{attribute}}: {{characterData.attributes?.[attribute]}}</h3>
+                }
+                </div>
+            
+            <div>
+                <h2>Perícias</h2>
+                @for(skill of characterData.skills | keyvalue; track $index) {
+                    <h3>{{skill.key}}</h3>
+                    <h3>Proficiencia: {{skill.value.proficiency}}</h3> 
+                }
+            </div>
+            <button matButton="filled">Editar</button>
+            <button matButton="filled" (click)="openDeleteDialogue()">Excluir</button>
+        </form>
+        
+    </section>
+} @else {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    
+    <div class="loading">
+        <mat-spinner mode="indeterminate"></mat-spinner>
+        <h1>Carregando ...</h1>
+    </div>
+}

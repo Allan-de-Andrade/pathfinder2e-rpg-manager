@@ -1,6 +1,5 @@
 package com.allan.rpg_manager.application.services;
 
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.security.authentication.BadCredentialsException;
@@ -8,11 +7,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.allan.rpg_manager.application.dtos.GoogleUserInfo;
-import com.allan.rpg_manager.application.dtos.LoginRequest;
-import com.allan.rpg_manager.application.dtos.LoginResponse;
-import com.allan.rpg_manager.application.port.in.AuthenticationUseCase;
-import com.allan.rpg_manager.application.port.in.TokenUseCase;
+import com.allan.rpg_manager.application.dtos.security.GoogleUserInfo;
+import com.allan.rpg_manager.application.dtos.security.LoginRequest;
+import com.allan.rpg_manager.application.dtos.security.LoginResponse;
+import com.allan.rpg_manager.application.port.in.security.AuthenticationUseCase;
+import com.allan.rpg_manager.application.port.in.security.TokenUseCase;
 import com.allan.rpg_manager.application.port.out.GoogleAuthPort;
 import com.allan.rpg_manager.application.port.out.UserRepository;
 import com.allan.rpg_manager.domains.securityDomain.AuthProviders;
