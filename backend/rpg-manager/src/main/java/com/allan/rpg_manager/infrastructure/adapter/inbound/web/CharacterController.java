@@ -31,7 +31,7 @@ public class CharacterController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<CharacterResponse>> findAllCharacters(Authentication authentication, @RequestParam(defaultValue = "0",required = false,value = "page") int page,@RequestParam(defaultValue = "5", required = false,value = "size") int size){
+    public ResponseEntity<List<CharacterResponse>> findAllCharacters(Authentication authentication, @RequestParam(defaultValue = "0",required = false,value = "page") int page,@RequestParam(defaultValue = "15", required = false,value = "size") int size){
         UUID userId = authenticatedUserPort.getAuthenticatedUserId(authentication);
         PageRequest pageRequest = PageRequest.of(page,size);
         List<CharacterResponse> characters = characterUseCase.findAll(userId,pageRequest).

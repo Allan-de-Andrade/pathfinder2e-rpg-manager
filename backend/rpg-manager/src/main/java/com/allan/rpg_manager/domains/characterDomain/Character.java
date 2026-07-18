@@ -48,6 +48,8 @@ public class Character {
             throw new IllegalArgumentException("Level must be at least 1");
         }
         this.ownerID = ownerId;
+        this.name = name;
+        this.backstory = backstory;
         this.level = level;
         this.attributes = attributes;
         this.ancestry = ancestry;
